@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Transaction Amount Recommendation System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <h1>📱 UPI Recommendation System</h1>
+                </div>
+                <nav class="header__nav">
+                    <button class="nav-btn active" data-section="dashboard">Dashboard</button>
+                    <button class="nav-btn" data-section="insights">User Insights</button>
+                    <button class="nav-btn" data-section="analytics">Analytics</button>
+                    <button class="nav-btn" data-section="system">System Info</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="section__header">
+                    <h2>UPI Transaction Amount Recommendation Dashboard</h2>
+                    <p>AI-powered transaction amount predictions using user behavior patterns</p>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card__icon">📊</div>
+                        <div class="stat-card__content">
+                            <div class="stat-card__value">10,000</div>
+                            <div class="stat-card__label">Total Transactions</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__icon">👥</div>
+                        <div class="stat-card__content">
+                            <div class="stat-card__value">1,000</div>
+                            <div class="stat-card__label">Unique Users</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__icon">🏷️</div>
+                        <div class="stat-card__content">
+                            <div class="stat-card__value">10</div>
+                            <div class="stat-card__label">Categories</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__icon">🎯</div>
+                        <div class="stat-card__content">
+                            <div class="stat-card__value">59.5%</div>
+                            <div class="stat-card__label">Model Accuracy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendation Form -->
+                <div class="recommendation-section">
+                    <div class="recommendation-form-container">
+                        <div class="card">
+                            <div class="card__header">
+                                <h3>Get Transaction Amount Recommendation</h3>
+                                <p>Enter user details to get AI-powered amount predictions</p>
+                            </div>
+                            <div class="card__body">
+                                <form id="recommendationForm" class="recommendation-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="form-label" for="userId">User ID</label>
+                                            <select class="form-control" id="userId" required>
+                                                <option value="">Select User</option>
+                                                <option value="USER_0001">USER_0001</option>
+                                                <option value="USER_0002">USER_0002</option>
+                                                <option value="USER_0003">USER_0003</option>
+                                                <option value="USER_0655">USER_0655</option>
+                                                <option value="USER_0755">USER_0755</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="category">Category</label>
+                                            <select class="form-control" id="category" required>
+                                                <option value="">Select Category</option>
+                                                <option value="Food & Dining">Food & Dining</option>
+                                                <option value="Transportation">Transportation</option>
+                                                <option value="Shopping">Shopping</option>
+                                                <option value="Bills & Utilities">Bills & Utilities</option>
+                                                <option value="Entertainment">Entertainment</option>
+                                                <option value="Healthcare">Healthcare</option>
+                                                <option value="Education">Education</option>
+                                                <option value="Groceries">Groceries</option>
+                                                <option value="Fuel">Fuel</option>
+                                                <option value="Transfer to Friends">Transfer to Friends</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="form-label" for="location">Location</label>
+                                            <select class="form-control" id="location" required>
+                                                <option value="">Select Location</option>
+                                                <option value="Mumbai">Mumbai</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Bangalore">Bangalore</option>
+                                                <option value="Chennai">Chennai</option>
+                                                <option value="Kolkata">Kolkata</option>
+                                                <option value="Hyderabad">Hyderabad</option>
+                                                <option value="Pune">Pune</option>
+                                                <option value="Ahmedabad">Ahmedabad</option>
+                                                <option value="Jaipur">Jaipur</option>
+                                                <option value="Lucknow">Lucknow</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="paymentMethod">Payment Method</label>
+                                            <select class="form-control" id="paymentMethod" required>
+                                                <option value="">Select Payment Method</option>
+                                                <option value="PhonePe">PhonePe</option>
+                                                <option value="Google Pay">Google Pay</option>
+                                                <option value="Paytm">Paytm</option>
+                                                <option value="BHIM">BHIM</option>
+                                                <option value="Amazon Pay">Amazon Pay</option>
+                                                <option value="Cred">Cred</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="hour">Transaction Hour</label>
+                                        <div class="slider-container">
+                                            <input type="range" class="form-slider" id="hour" min="0" max="23" value="12">
+                                            <div class="slider-value">12</div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Get Recommendation</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation Results -->
+                    <div id="recommendationResults" class="recommendation-results hidden">
+                        <div class="card">
+                            <div class="card__header">
+                                <h3>💡 Recommendation Results</h3>
+                            </div>
+                            <div class="card__body">
+                                <div class="result-main">
+                                    <div class="result-amount">₹<span id="recommendedAmount">0</span></div>
+                                    <div class="result-confidence">
+                                        <span class="status status--success">
+                                            <span id="confidence">85</span>% Confidence
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="result-details">
+                                    <div class="detail-item">
+                                        <span class="detail-label">User Cluster:</span>
+                                        <span id="userCluster" class="detail-value">High-Value Users</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">Reasoning:</span>
+                                        <span id="reasoning" class="detail-value">Based on user's spending pattern and category preferences</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Insights Section -->
+            <section id="insights" class="section">
+                <div class="section__header">
+                    <h2>User Insights & Spending Patterns</h2>
+                    <p>Detailed analysis of user behavior and transaction patterns</p>
+                </div>
+
+                <div class="insights-grid">
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Selected User Profile</h3>
+                        </div>
+                        <div class="card__body">
+                            <div id="userProfileDisplay" class="user-profile">
+                                <div class="profile-stat">
+                                    <span class="profile-label">Average Amount:</span>
+                                    <span class="profile-value">₹1,017</span>
+                                </div>
+                                <div class="profile-stat">
+                                    <span class="profile-label">Total Transactions:</span>
+                                    <span class="profile-value">8</span>
+                                </div>
+                                <div class="profile-stat">
+                                    <span class="profile-label">Preferred Category:</span>
+                                    <span class="profile-value">Entertainment</span>
+                                </div>
+                                <div class="profile-stat">
+                                    <span class="profile-label">User Cluster:</span>
+                                    <span class="profile-value status status--info">High-Value Users</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Spending Pattern Chart</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="chart-container" style="position: relative; height: 300px;">
+                                <canvas id="spendingChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="section">
+                <div class="section__header">
+                    <h2>System Analytics & Performance</h2>
+                    <p>Detailed insights into model performance and data patterns</p>
+                </div>
+
+                <div class="analytics-grid">
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Feature Importance</h3>
+                        </div>
+                        <div class="card__body">
+                            <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/fc4cc50899518d01685de731fffe69a2/7c90828b-54d9-4750-97a9-8fac229ba151/abd6fbd7.png" alt="Feature Importance Chart" class="chart-image">
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Model Performance Comparison</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="chart-container" style="position: relative; height: 300px;">
+                                <canvas id="performanceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>User Cluster Distribution</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="chart-container" style="position: relative; height: 300px;">
+                                <canvas id="clusterChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Category-wise Average Amounts</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="chart-container" style="position: relative; height: 300px;">
+                                <canvas id="categoryChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- System Information Section -->
+            <section id="system" class="section">
+                <div class="section__header">
+                    <h2>System Information & Technical Specifications</h2>
+                    <p>Detailed information about the recommendation system</p>
+                </div>
+
+                <div class="system-info-grid">
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Model Performance Metrics</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="metric-grid">
+                                <div class="metric-item">
+                                    <div class="metric-value">Random Forest</div>
+                                    <div class="metric-label">Best Model</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-value">475.68</div>
+                                    <div class="metric-label">MAE Score</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-value">776.90</div>
+                                    <div class="metric-label">RMSE Score</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-value">59.5%</div>
+                                    <div class="metric-label">R² Score</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Dataset Information</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="info-list">
+                                <div class="info-item">
+                                    <span class="info-label">Total Records:</span>
+                                    <span class="info-value">10,000 transactions</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Unique Users:</span>
+                                    <span class="info-value">1,000 users</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Transaction Categories:</span>
+                                    <span class="info-value">10 categories</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Geographic Coverage:</span>
+                                    <span class="info-value">10 major Indian cities</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Payment Methods:</span>
+                                    <span class="info-value">6 UPI platforms</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">User Clusters:</span>
+                                    <span class="info-value">5 behavioral clusters</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__header">
+                            <h3>Technical Specifications</h3>
+                        </div>
+                        <div class="card__body">
+                            <div class="tech-specs">
+                                <h4>Machine Learning Models Used:</h4>
+                                <ul>
+                                    <li>Random Forest Regressor (Best Performance)</li>
+                                    <li>Gradient Boosting Regressor</li>
+                                    <li>Linear Regression (Baseline)</li>
+                                </ul>
+                                
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li>User behavioral clustering using K-Means</li>
+                                    <li>Time-based transaction patterns</li>
+                                    <li>Category-based spending analysis</li>
+                                    <li>Location and payment method preferences</li>
+                                    <li>Statistical transaction metrics</li>
+                                </ul>
+
+                                <h4>System Capabilities:</h4>
+                                <ul>
+                                    <li>Real-time amount predictions</li>
+                                    <li>User spending pattern analysis</li>
+                                    <li>Confidence scoring for recommendations</li>
+                                    <li>Cross-validation with 80-20 train-test split</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

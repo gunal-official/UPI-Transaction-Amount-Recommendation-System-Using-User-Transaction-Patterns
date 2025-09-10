@@ -1,0 +1,42 @@
+{
+  "project_name": "UPI Transaction Amount Recommendation System",
+  "description": "Machine learning system to recommend optimal transaction amounts based on user patterns",
+  "dataset_size": 10000,
+  "unique_users": 1000,
+  "categories": [
+    "Transportation",
+    "Bills & Utilities",
+    "Transfer to Friends",
+    "Entertainment",
+    "Healthcare",
+    "Fuel",
+    "Education",
+    "Food & Dining",
+    "Groceries",
+    "Shopping"
+  ],
+  "date_range": "2024-01-01 07:47:00 to 2024-12-30 20:31:00",
+  "best_model": "Random Forest",
+  "model_performance": {
+    "mae": 475.6840649999999,
+    "rmse": 776.8951921803546,
+    "r2_score": 0.5946132345873032
+  },
+  "top_features": [
+    "category_encoded",
+    "amount_std",
+    "day_of_month",
+    "days_since_first",
+    "median_amount"
+  ],
+  "user_clusters": {
+    "total_clusters": 5,
+    "cluster_distribution": {
+      "3": 267,
+      "2": 227,
+      "4": 198,
+      "0": 162,
+      "1": 146
+    }
+  }
+}

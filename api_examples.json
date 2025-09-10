@@ -1,0 +1,34 @@
+[
+  {
+    "endpoint": "/recommend",
+    "method": "POST",
+    "request": {
+      "user_id": "USER_0001",
+      "category": "Food & Dining",
+      "location": "Mumbai",
+      "time": "13:00",
+      "payment_method": "PhonePe"
+    },
+    "response": {
+      "recommended_amount": 285.5,
+      "confidence": 0.82,
+      "user_cluster": "High-Value Users",
+      "reasoning": "Based on your historical spending pattern of \u20b91017 average and preference for entertainment category during lunch hours"
+    }
+  },
+  {
+    "endpoint": "/user-insights",
+    "method": "GET",
+    "request": {
+      "user_id": "USER_0001"
+    },
+    "response": {
+      "avg_transaction_amount": 1017.0,
+      "total_transactions": 8,
+      "preferred_category": "Entertainment",
+      "spending_cluster": "High-Value Users",
+      "typical_transaction_time": "14:53",
+      "weekend_spending_ratio": 0.38
+    }
+  }
+]
