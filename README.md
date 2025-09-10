@@ -147,12 +147,6 @@ GET /user-insights/{user_id}
 
 This project is licensed under the MIT License.
 
-## 👥 Contributors
-
-- Data Science Team
-- UPI Research Group
-- Machine Learning Engineers
-
 ---
 
 **Built with ❤️ for the fintech community**
